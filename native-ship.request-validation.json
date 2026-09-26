@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "operationId": "checkAccountBalance",
+      "method": "GET",
+      "path": "/check-account-balance/",
+      "serverId": "documentServer1HttpsEmailverifierReoonComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "ReoonApiKey"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "api_status",
+            "type": "string"
+          },
+          {
+            "name": "remaining_daily_credits",
+            "type": "integer"
+          },
+          {
+            "name": "remaining_instant_credits",
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "api_status",
+          "remaining_daily_credits",
+          "remaining_instant_credits",
+          "status"
+        ]
+      },
+      "errors": [],
+      "requestPlan": {
+        "operationId": "checkAccountBalance",
+        "method": "GET",
+        "path": "/check-account-balance/",
+        "serverId": "documentServer1HttpsEmailverifierReoonComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/check-account-balance/",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ReoonApiKey"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "api_status",
+              "type": "string"
+            },
+            {
+              "name": "remaining_daily_credits",
+              "type": "integer"
+            },
+            {
+              "name": "remaining_instant_credits",
+              "type": "integer"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "api_status",
+            "remaining_daily_credits",
+            "remaining_instant_credits",
+            "status"
+          ]
+        },
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "createBulkVerificationTask",
+      "method": "POST",
+      "path": "/create-bulk-verification-task/",
+      "serverId": "documentServer1HttpsEmailverifierReoonComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "ReoonApiKey"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "emails",
+            "inputName": "emails",
+            "sample": [
+              "value/id"
+            ],
+            "type": "array",
+            "required": true
+          },
+          {
+            "name": "key",
+            "inputName": "key",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "name",
+            "inputName": "name",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "count_duplicates_removed",
+            "type": "integer"
+          },
+          {
+            "name": "count_processing",
+            "type": "integer"
+          },
+          {
+            "name": "count_rejected_emails",
+            "type": "integer"
+          },
+          {
+            "name": "count_submitted",
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "name": "task_id",
+            "type": "integer"
+          }
+        ],
+        "simplifiedFields": [
+          "count_duplicates_removed",
+          "count_processing",
+          "count_rejected_emails",
+          "count_submitted",
+          "status",
+          "task_id"
+        ]
+      },
+      "errors": [
+        {
+          "status": "default",
+          "title": "Reoon returned an API-level error. The HTTP status is not specified in the documentation."
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createBulkVerificationTask",
+        "method": "POST",
+        "path": "/create-bulk-verification-task/",
+        "serverId": "documentServer1HttpsEmailverifierReoonComApiV1",
+        "request": {
+          "method": "POST",
+          "url": "=/create-bulk-verification-task/",
+          "query": [],
+          "body": [
+            {
+              "name": "emails",
+              "source": "parameter"
+            },
+            {
+              "name": "key",
+              "source": "parameter"
+            },
+            {
+              "name": "name",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ReoonApiKey"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "count_duplicates_removed",
+              "type": "integer"
+            },
+            {
+              "name": "count_processing",
+              "type": "integer"
+            },
+            {
+              "name": "count_rejected_emails",
+              "type": "integer"
+            },
+            {
+              "name": "count_submitted",
+              "type": "integer"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            },
+            {
+              "name": "task_id",
+              "type": "integer"
+            }
+          ],
+          "simplifiedFields": [
+            "count_duplicates_removed",
+            "count_processing",
+            "count_rejected_emails",
+            "count_submitted",
+            "status",
+            "task_id"
+          ]
+        },
+        "errors": [
+          {
+            "status": "default",
+            "title": "Reoon returned an API-level error. The HTTP status is not specified in the documentation."
+          }
+        ],
+        "unsupportedSemantics": [
+          "advanced parameter emails"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getBulkVerificationTaskResult",
+      "method": "GET",
+      "path": "/get-result-bulk-verification-task/",
+      "serverId": "documentServer1HttpsEmailverifierReoonComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "ReoonApiKey"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "task_id",
+          "inputName": "task_id",
+          "sample": "value/id",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "getBulkVerificationTaskResult",
+        "method": "GET",
+        "path": "/get-result-bulk-verification-task/",
+        "serverId": "documentServer1HttpsEmailverifierReoonComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/get-result-bulk-verification-task/",
+          "query": [
+            {
+              "name": "task_id",
+              "source": "parameter"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ReoonApiKey"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "verifyEmail",
+      "method": "GET",
+      "path": "/verify",
+      "serverId": "documentServer1HttpsEmailverifierReoonComApiV1",
+      "authentication": [
+        {
+          "schemes": [
+            "ReoonApiKey"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "email",
+          "inputName": "email",
+          "sample": "value/id",
+          "location": "query",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "mode",
+          "inputName": "mode",
+          "sample": "quick",
+          "default": "quick",
+          "enum": [
+            "quick",
+            "power"
+          ],
+          "location": "query",
+          "required": false,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [],
+      "requestPlan": {
+        "operationId": "verifyEmail",
+        "method": "GET",
+        "path": "/verify",
+        "serverId": "documentServer1HttpsEmailverifierReoonComApiV1",
+        "request": {
+          "method": "GET",
+          "url": "=/verify",
+          "query": [
+            {
+              "name": "email",
+              "source": "parameter"
+            },
+            {
+              "name": "mode",
+              "source": "additionalFields"
+            }
+          ],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "ReoonApiKey"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    }
+  ],
+  "triggerFixtures": []
+}
