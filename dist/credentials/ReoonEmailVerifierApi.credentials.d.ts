@@ -1,5 +1,5 @@
 import { type IAuthenticateGeneric, type Icon, type ICredentialTestRequest, type ICredentialType, type INodeProperties } from "n8n-workflow";
-export declare class ReoonEmailVerifierApiApi implements ICredentialType {
+export declare class ReoonEmailVerifierApi implements ICredentialType {
     name: string;
     displayName: string;
     documentationUrl: string;

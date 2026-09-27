@@ -24,11 +24,11 @@
     "license": "MIT",
     "n8n": {
         "credentials": [
-            "dist/credentials/ReoonEmailVerifierApiApi.credentials.js"
+            "dist/credentials/ReoonEmailVerifierApi.credentials.js"
         ],
         "n8nNodesApiVersion": 1,
         "nodes": [
-            "dist/nodes/ReoonEmailVerifierApi/ReoonEmailVerifierApi.node.js"
+            "dist/nodes/ReoonEmailVerifier/ReoonEmailVerifier.node.js"
         ],
         "strict": true
     },

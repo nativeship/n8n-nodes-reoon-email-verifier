@@ -2,15 +2,15 @@
   "schemaVersion": 2,
   "style": "programmatic",
   "names": {
-    "typeName": "ReoonEmailVerifierApi",
-    "nodeName": "reoonEmailVerifierApi",
-    "descriptionName": "reoonEmailVerifierApi",
+    "typeName": "ReoonEmailVerifier",
+    "nodeName": "reoonEmailVerifier",
+    "descriptionName": "reoonEmailVerifier",
     "hasTriggers": false,
     "nodeFiles": [
-      "dist/nodes/ReoonEmailVerifierApi/ReoonEmailVerifierApi.node.js"
+      "dist/nodes/ReoonEmailVerifier/ReoonEmailVerifier.node.js"
     ],
     "credentialFiles": [
-      "dist/credentials/ReoonEmailVerifierApiApi.credentials.js"
+      "dist/credentials/ReoonEmailVerifierApi.credentials.js"
     ]
   },
   "target": {
@@ -479,7 +479,7 @@
   ],
   "presentationProfile": {
     "version": 1,
-    "title": "Reoon Email Verifier API",
+    "title": "Reoon Email Verifier",
     "description": "Verify email addresses in real time or bulk, detect disposable inboxes, and check credit balances with Reoon Email Verifier",
     "documentationUrl": "https://nativeship.io/nodes/@nativeship/n8n-nodes-reoon-email-verifier",
     "artwork": {
@@ -518,7 +518,7 @@
           "path": "/create-bulk-verification-task/"
         },
         "displayName": "Create Bulk Verification Task",
-        "description": "Submits a batch list of up to 50,000 email addresses to create an asynchronous background verification job",
+        "description": "Submits a batch list of up to 50,000 email addresses to create an asynchronous background verification job.",
         "hidden": false,
         "resource": "bulkVerification"
       },

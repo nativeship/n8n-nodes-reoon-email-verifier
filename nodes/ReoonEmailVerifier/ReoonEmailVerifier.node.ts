@@ -152,13 +152,13 @@ function valueAtPath(value: unknown, path: string): unknown {
   }, value);
 }
 
-export class ReoonEmailVerifierApi implements INodeType {
+export class ReoonEmailVerifier implements INodeType {
   description: INodeTypeDescription = {
-        displayName: "Reoon Email Verifier API",
-        name: "reoonEmailVerifierApi",
+        displayName: "Reoon Email Verifier",
+        name: "reoonEmailVerifier",
         icon: {
-            light: "file:reoonEmailVerifierApi.svg",
-            dark: "file:reoonEmailVerifierApi.dark.svg"
+            light: "file:reoonEmailVerifier.svg",
+            dark: "file:reoonEmailVerifier.dark.svg"
         },
         group: [],
         version: [
@@ -187,7 +187,7 @@ export class ReoonEmailVerifierApi implements INodeType {
             }
         ],
         defaults: {
-            name: "Reoon Email Verifier API"
+            name: "Reoon Email Verifier"
         },
         usableAsTool: true,
         inputs: [
@@ -198,7 +198,7 @@ export class ReoonEmailVerifierApi implements INodeType {
         ],
         credentials: [
             {
-                name: "reoonEmailVerifierApiApi",
+                name: "reoonEmailVerifierApi",
                 required: true
             }
         ],
@@ -444,7 +444,7 @@ export class ReoonEmailVerifierApi implements INodeType {
         
         const serverBaseUrl = { url: "https://emailverifier.reoon.com/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"reoonEmailVerifierApiApi","type":"apiKey","location":"query","parameter":"key"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"reoonEmailVerifierApi","type":"apiKey","location":"query","parameter":"key"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["api_status","remaining_daily_credits","remaining_instant_credits","status"], simplified: ["api_status","remaining_daily_credits","remaining_instant_credits","status"] };
@@ -465,7 +465,7 @@ export class ReoonEmailVerifierApi implements INodeType {
         
         const serverBaseUrl = { url: "https://emailverifier.reoon.com/api/v1", blockRedirects: false };
         options = { method: "POST" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"reoonEmailVerifierApiApi","type":"apiKey","location":"query","parameter":"key"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"reoonEmailVerifierApi","type":"apiKey","location":"query","parameter":"key"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["count_duplicates_removed","count_processing","count_rejected_emails","count_submitted","status","task_id"], simplified: ["count_duplicates_removed","count_processing","count_rejected_emails","count_submitted","status","task_id"] };
@@ -484,7 +484,7 @@ export class ReoonEmailVerifierApi implements INodeType {
         
         const serverBaseUrl = { url: "https://emailverifier.reoon.com/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"reoonEmailVerifierApiApi","type":"apiKey","location":"query","parameter":"key"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"reoonEmailVerifierApi","type":"apiKey","location":"query","parameter":"key"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: [], simplified: [] };
@@ -504,7 +504,7 @@ export class ReoonEmailVerifierApi implements INodeType {
         
         const serverBaseUrl = { url: "https://emailverifier.reoon.com/api/v1", blockRedirects: false };
         options = { method: "GET" as unknown as IHttpRequestOptions["method"], url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-        credentialApplications = ([{"credentialType":"reoonEmailVerifierApiApi","type":"apiKey","location":"query","parameter":"key"}]) as CredentialApplication[];
+        credentialApplications = ([{"credentialType":"reoonEmailVerifierApi","type":"apiKey","location":"query","parameter":"key"}]) as CredentialApplication[];
         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: [], simplified: [] };

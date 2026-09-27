@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReoonEmailVerifierApiApi = void 0;
-class ReoonEmailVerifierApiApi {
+exports.ReoonEmailVerifierApi = void 0;
+class ReoonEmailVerifierApi {
     constructor() {
-        this.name = "reoonEmailVerifierApiApi";
+        this.name = "reoonEmailVerifierApi";
         this.displayName = "Reoon Email Verifier API";
         this.documentationUrl = "https://nativeship.io/nodes/@nativeship/n8n-nodes-reoon-email-verifier";
         this.icon = {
-            light: "file:../nodes/ReoonEmailVerifierApi/reoonEmailVerifierApi.svg",
-            dark: "file:../nodes/ReoonEmailVerifierApi/reoonEmailVerifierApi.dark.svg"
+            light: "file:../nodes/ReoonEmailVerifier/reoonEmailVerifier.svg",
+            dark: "file:../nodes/ReoonEmailVerifier/reoonEmailVerifier.dark.svg"
         };
         this.properties = [
             {
@@ -38,5 +38,5 @@ class ReoonEmailVerifierApiApi {
         };
     }
 }
-exports.ReoonEmailVerifierApiApi = ReoonEmailVerifierApiApi;
-//# sourceMappingURL=ReoonEmailVerifierApiApi.credentials.js.map
+exports.ReoonEmailVerifierApi = ReoonEmailVerifierApi;
+//# sourceMappingURL=ReoonEmailVerifierApi.credentials.js.map

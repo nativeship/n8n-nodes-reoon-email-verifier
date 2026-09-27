@@ -1,5 +1,5 @@
 import { type IExecuteFunctions, type INodeExecutionData, type INodeType, type INodeTypeDescription } from "n8n-workflow";
-export declare class ReoonEmailVerifierApi implements INodeType {
+export declare class ReoonEmailVerifier implements INodeType {
     description: INodeTypeDescription;
     execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]>;
 }

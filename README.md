@@ -1,4 +1,4 @@
-# Reoon Email Verifier API n8n community node
+# Reoon Email Verifier n8n community node
 
 Verify email addresses in real time or bulk, detect disposable inboxes, and check credit balances with Reoon Email Verifier
 
@@ -26,12 +26,12 @@ Configure the generated API key credential in n8n before using the node.
 ## Usage
 
 1. Install this community-node package in n8n.
-2. Add the **Reoon Email Verifier API** node to a workflow.
+2. Add the **Reoon Email Verifier** node to a workflow.
 3. Select a resource and operation, configure its parameters, and execute the workflow.
 
 ## Example workflow
 
-Connect **Manual Trigger** -> **Reoon Email Verifier API** -> a destination node, select an operation, then run the workflow and inspect the returned items.
+Connect **Manual Trigger** -> **Reoon Email Verifier** -> a destination node, select an operation, then run the workflow and inspect the returned items.
 
 ## Development
 
@@ -42,4 +42,4 @@ npm run lint
 npm run dev
 ```
 
-`npm run dev` starts a local n8n development instance. Find the integration by its **Reoon Email Verifier API** display name.
+`npm run dev` starts a local n8n development instance. Find the integration by its **Reoon Email Verifier** display name.

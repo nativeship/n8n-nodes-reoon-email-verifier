@@ -29,17 +29,17 @@
   ],
   "n8n": {
     "credentials": [
-      "dist/credentials/ReoonEmailVerifierApiApi.credentials.js"
+      "dist/credentials/ReoonEmailVerifierApi.credentials.js"
     ],
     "n8nNodesApiVersion": 1,
     "nodes": [
-      "dist/nodes/ReoonEmailVerifierApi/ReoonEmailVerifierApi.node.js"
+      "dist/nodes/ReoonEmailVerifier/ReoonEmailVerifier.node.js"
     ],
     "strict": true
   },
   "name": "@nativeship/n8n-nodes-reoon-email-verifier",
   "nativeShip": {
-    "artifactSha256": "094d3ed9aa303cd7472c697237374caeaf13a7cf46947d916888cbafef616b8f"
+    "artifactSha256": "86c48b129579521c9213bc48f66c8dcb69abb41e3b10831afeb7e4f836884da6"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
@@ -57,5 +57,5 @@
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReoonEmailVerifierApi = void 0;
+exports.ReoonEmailVerifier = void 0;
 const n8n_workflow_1 = require("n8n-workflow");
 const http_1 = require("../../shared/http");
 function normalizeParameterValue(value) {
@@ -148,14 +148,14 @@ function valueAtPath(value, path) {
         return current[segment];
     }, value);
 }
-class ReoonEmailVerifierApi {
+class ReoonEmailVerifier {
     constructor() {
         this.description = {
-            displayName: "Reoon Email Verifier API",
-            name: "reoonEmailVerifierApi",
+            displayName: "Reoon Email Verifier",
+            name: "reoonEmailVerifier",
             icon: {
-                light: "file:reoonEmailVerifierApi.svg",
-                dark: "file:reoonEmailVerifierApi.dark.svg"
+                light: "file:reoonEmailVerifier.svg",
+                dark: "file:reoonEmailVerifier.dark.svg"
             },
             group: [],
             version: [
@@ -184,7 +184,7 @@ class ReoonEmailVerifierApi {
                 }
             ],
             defaults: {
-                name: "Reoon Email Verifier API"
+                name: "Reoon Email Verifier"
             },
             usableAsTool: true,
             inputs: [
@@ -195,7 +195,7 @@ class ReoonEmailVerifierApi {
             ],
             credentials: [
                 {
-                    name: "reoonEmailVerifierApiApi",
+                    name: "reoonEmailVerifierApi",
                     required: true
                 }
             ],
@@ -435,7 +435,7 @@ class ReoonEmailVerifierApi {
                         const body = {};
                         const serverBaseUrl = { url: "https://emailverifier.reoon.com/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "reoonEmailVerifierApiApi", "type": "apiKey", "location": "query", "parameter": "key" }]);
+                        credentialApplications = ([{ "credentialType": "reoonEmailVerifierApi", "type": "apiKey", "location": "query", "parameter": "key" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["api_status", "remaining_daily_credits", "remaining_instant_credits", "status"], simplified: ["api_status", "remaining_daily_credits", "remaining_instant_credits", "status"] };
@@ -454,7 +454,7 @@ class ReoonEmailVerifierApi {
                             setBodyField(body, { "name": "name", "displayName": "Name", "type": "string", "description": "Optional task name, up to 25 characters." }, additionalFields["name"], this, itemIndex);
                         const serverBaseUrl = { url: "https://emailverifier.reoon.com/api/v1", blockRedirects: false };
                         options = { method: "POST", url: serverBaseUrl.url + path, qs, headers: { ...headers, ...{ 'Content-Type': "application/json" } }, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "reoonEmailVerifierApiApi", "type": "apiKey", "location": "query", "parameter": "key" }]);
+                        credentialApplications = ([{ "credentialType": "reoonEmailVerifierApi", "type": "apiKey", "location": "query", "parameter": "key" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: ["count_duplicates_removed", "count_processing", "count_rejected_emails", "count_submitted", "status", "task_id"], simplified: ["count_duplicates_removed", "count_processing", "count_rejected_emails", "count_submitted", "status", "task_id"] };
@@ -468,7 +468,7 @@ class ReoonEmailVerifierApi {
                         qs["task_id"] = this.getNodeParameter("task_id", itemIndex);
                         const serverBaseUrl = { url: "https://emailverifier.reoon.com/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "reoonEmailVerifierApiApi", "type": "apiKey", "location": "query", "parameter": "key" }]);
+                        credentialApplications = ([{ "credentialType": "reoonEmailVerifierApi", "type": "apiKey", "location": "query", "parameter": "key" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: [], simplified: [] };
@@ -485,7 +485,7 @@ class ReoonEmailVerifierApi {
                             qs["mode"] = additionalFields["mode"];
                         const serverBaseUrl = { url: "https://emailverifier.reoon.com/api/v1", blockRedirects: false };
                         options = { method: "GET", url: serverBaseUrl.url + path, qs, body: body, json: true, arrayFormat: "indices", ...(serverBaseUrl.blockRedirects ? { maxRedirects: 0 } : {}) };
-                        credentialApplications = ([{ "credentialType": "reoonEmailVerifierApiApi", "type": "apiKey", "location": "query", "parameter": "key" }]);
+                        credentialApplications = ([{ "credentialType": "reoonEmailVerifierApi", "type": "apiKey", "location": "query", "parameter": "key" }]);
                         retryContract = { mode: "none", retryConnectionFailures: false, retryTimeouts: false, retryRateLimits: false, retryServerErrors: false, maxAttempts: 1, maxElapsedMs: 30000, baseBackoffMs: 500, maxBackoffMs: 5000, jitterRatio: 0.2, idempotency: undefined };
                         pagination = { style: "none", page: "", limit: "", cursor: "", responseCursor: "", hasMore: "", itemPath: "", advancement: "", maxPages: 1, maxItems: Number.POSITIVE_INFINITY, maxElapsedMs: 30000, maxMemoryBytes: 10485760, repeatedCursorLimit: 1, repeatedPageLimit: 1, pageSize: 100 };
                         responsePlan = { binary: false, full: false, envelopePath: "", itemPath: "", fields: [], simplified: [] };
@@ -605,5 +605,5 @@ class ReoonEmailVerifierApi {
         return [output];
     }
 }
-exports.ReoonEmailVerifierApi = ReoonEmailVerifierApi;
-//# sourceMappingURL=ReoonEmailVerifierApi.node.js.map
+exports.ReoonEmailVerifier = ReoonEmailVerifier;
+//# sourceMappingURL=ReoonEmailVerifier.node.js.map
